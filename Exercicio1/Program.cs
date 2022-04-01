@@ -19,7 +19,7 @@ class Program
 
        
 
-       
+        stopWatch.Start();
 
         for (int i = 0; i < (numeroSorteado.Length); i++)
         {
@@ -27,14 +27,15 @@ class Program
         }
 
 
-        stopWatch.Start();
+        
         
         Thread t1 = new Thread(Thread1);
         t1.Start();
-        t1.Join();
+        
         Thread t2 = new Thread(Thread2);
         t2.Start();
-
+        
+        t1.Join();
         t2.Join();
 
         somaTotal = soma1 + soma2;
